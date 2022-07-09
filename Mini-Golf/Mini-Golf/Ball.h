@@ -46,6 +46,3 @@ private:
 	void DecreaseVelocity();
 
 };
-
-};
-

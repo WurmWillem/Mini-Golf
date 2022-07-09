@@ -15,7 +15,7 @@ Ball::Ball(int X, int Y, int Radius, Color Color)
 
 void Ball::Draw()
 {
-	DrawCircle(posX, posY, 10, color);
+	DrawCircle(posX, posY, radius, color);
 }
 
 void Ball::UpdatePosition()
@@ -77,7 +77,7 @@ void Ball::CheckWallCollision()
 	if (posY >= GetScreenHeight() || posY <= 0)
 	{
 		velocity.y *= -1;
-
+	}
 	if (posX + radius >= GetScreenWidth())
 	{
 		velocity.x *= -1;
@@ -109,15 +109,6 @@ void Ball::DecreaseVelocity()
 	//std::cout << "Y = " << velocity.y << "\n";
 }
 
-
-
-void Ball::DecreaseVelocity()
-{
-
-	//std::cout << "X = " << velocity.x / velocity.y << "\n";
-	//std::cout << "Y = " << velocity.y << "\n";
-}
-
 int Ball::GetX()
 {
 	return posX;
@@ -135,7 +126,5 @@ int Ball::GetRadius()
 
 void Ball::Shrink()
 {
-	// not working
-	// Goes in the Hole effect???
 	radius -= 2;
 }
