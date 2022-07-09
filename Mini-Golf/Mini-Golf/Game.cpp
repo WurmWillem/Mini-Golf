@@ -5,9 +5,15 @@
 
 bool Game::Run()
 {
+<<<<<<< Updated upstream
     //Initialize components
     Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball
     Hole hole(16);
+=======
+    //Initialize Ball
+    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball
+    Hole hole(16); 
+>>>>>>> Stashed changes
 
     while (!WindowShouldClose())
     {
@@ -24,10 +30,20 @@ bool Game::Run()
 void Game::Update(Ball &ball, Hole &hole)
 {
     DrawText("Main Game!", GetScreenWidth() / 3, 140, 30, WHITE);
+<<<<<<< Updated upstream
 
     hole.Draw();
     hole.CheckCollision(ball);
+=======
+>>>>>>> Stashed changes
 
-    ball.Update();
+    hole.CheckCollision(ball);
+    hole.Draw();
+
+    // if hole collide ball -> ball goes in
+    // not  working
+    if (hole.collided) ball.Shrink();
+
+    ball.UpdatePosition();
     ball.Draw();
 }

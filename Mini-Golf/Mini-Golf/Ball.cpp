@@ -18,7 +18,7 @@ void Ball::Draw()
 	DrawCircle(posX, posY, 10, color);
 }
 
-void Ball::Update()
+void Ball::UpdatePosition()
 {
 	GetVelocity();
 
@@ -61,8 +61,8 @@ Vector2 Ball::CalculateVelocity()
 	float disY = posY - GetMousePosition().y; //Get vertical distance between mouse and ball
 
 	//float dis = sqrt(pow(disX, 2) + pow(disY, 2)); // calculate distance using Pythagoreas theorem
-	
-	return Vector2{disX, disY};
+
+	return Vector2{ disX, disY };
 }
 
 void Ball::CheckWallCollision()
@@ -75,4 +75,41 @@ void Ball::CheckWallCollision()
 	{
 		velocity.y *= -1;
 	}
+<<<<<<< Updated upstream
+=======
+	else if (posY - radius <= 0)
+	{
+		velocity.y *= -1;
+		posY = radius;
+	}
+}
+
+void Ball::DecreaseVelocity()
+{
+
+	//std::cout << "X = " << velocity.x / velocity.y << "\n";
+	//std::cout << "Y = " << velocity.y << "\n";
+}
+
+int Ball::GetX()
+{
+	return posX;
+}
+
+int Ball::GetY()
+{
+	return posY;
+}
+
+int Ball::GetRadius()
+{
+	return radius;
+}
+
+void Ball::Shrink()
+{
+	// not working
+	// Goes in the Hole effect???
+	radius -= 2;
+>>>>>>> Stashed changes
 }
