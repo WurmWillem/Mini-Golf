@@ -22,11 +22,8 @@ void Ball::Update()
 {
 	GetVelocity();
 
-<<<<<<< Updated upstream
-=======
 	CheckWallCollision();
 
->>>>>>> Stashed changes
 	posX += velocity.x * velocityMultiplier * GetFrameTime();
 	posY += velocity.y * velocityMultiplier * GetFrameTime();
 }
@@ -68,10 +65,6 @@ Vector2 Ball::CalculateVelocity()
 	return Vector2{disX, disY};
 }
 
-<<<<<<< Updated upstream
-
-
-=======
 void Ball::CheckWallCollision()
 {
 	if (posX >= GetScreenWidth() || posX <= 0) 
@@ -83,4 +76,3 @@ void Ball::CheckWallCollision()
 		velocity.y *= -1;
 	}
 }
->>>>>>> Stashed changes
