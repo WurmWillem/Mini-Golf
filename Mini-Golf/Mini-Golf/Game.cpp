@@ -12,18 +12,17 @@ bool Game::Run()
         BeginDrawing();
         ClearBackground(BLACK);
 
-        DrawText("Main Game!", GetScreenWidth() / 3, 100, 30, WHITE);
-
-        ball.Update();
-        ball.Draw();
+        Update(ball);
 
         EndDrawing();
-
     }
 	return true;
 }
 
-void Game::Update()
+void Game::Update(Ball &ball)
 {
-	return;
+    DrawText("Main Game!", GetScreenWidth() / 3, 100, 30, WHITE);
+
+    ball.Update();
+    ball.Draw();
 }

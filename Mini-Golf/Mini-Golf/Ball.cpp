@@ -28,28 +28,19 @@ void Ball::Update()
 
 void Ball::GetVelocity()
 {
-	if (BallIsPressed())
-	{
-		selected = !selected; //The ball is selected/unselected depending on if it was selected before
-	}
+	if (BallIsPressed()) selected = true;
 
 	if (selected)
 	{
 		color = ORANGE;
-
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
-		{
-			velocityOnceReleased = CalculateVelocity(); //Get the distance between the ball and mouse
-		}
+		velocityOnceReleased = CalculateVelocity(); //Get the distance between the ball and mouse
 
 		if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
 		{
 			velocity = velocityOnceReleased;
+			color = WHITE;
+			selected = false;
 		}
-	}
-	else
-	{
-		color = WHITE;
 	}
 }
 

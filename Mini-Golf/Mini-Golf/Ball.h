@@ -31,4 +31,6 @@ private:
 	bool BallIsPressed();
 
 	Vector2 CalculateVelocity();
+
+	void CheckCollision();
 };
