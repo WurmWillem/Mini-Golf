@@ -75,8 +75,6 @@ void Ball::CheckWallCollision()
 	{
 		velocity.y *= -1;
 	}
-<<<<<<< Updated upstream
-=======
 	else if (posY - radius <= 0)
 	{
 		velocity.y *= -1;
@@ -111,5 +109,4 @@ void Ball::Shrink()
 	// not working
 	// Goes in the Hole effect???
 	radius -= 2;
->>>>>>> Stashed changes
 }

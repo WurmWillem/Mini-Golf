@@ -42,10 +42,6 @@ private:
 	Vector2 CalculateVelocity();
 
 	void CheckWallCollision();
-<<<<<<< Updated upstream
-};
-=======
 
 	void DecreaseVelocity();
 };
->>>>>>> Stashed changes

@@ -1,9 +1,6 @@
 #pragma once
-<<<<<<< Updated upstream
-=======
 #include "Ball.h"
 
->>>>>>> Stashed changes
 class Hole
 {
 public:
@@ -11,14 +8,6 @@ public:
 
 	void Draw();
 
-<<<<<<< Updated upstream
-	bool CheckCollision(Ball &ball);
-private:
-
-	Vector2 holePosition;
-	int radius;
-};
-=======
 	void CheckCollision(Ball& ball);
 
 	bool collided;
@@ -28,4 +17,3 @@ private:
 
 	int radius;
 };
->>>>>>> Stashed changes
