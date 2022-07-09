@@ -32,5 +32,5 @@ private:
 
 	Vector2 CalculateVelocity();
 
-	void CheckCollision();
+	void CheckWallCollision();
 };
