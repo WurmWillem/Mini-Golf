@@ -142,10 +142,12 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Mini-Golf.cpp" />
+    <ClCompile Include="Startscreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Startscreen.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
