@@ -1,9 +1,10 @@
 #pragma once
+#include "ball.h"
 
 class Game 
 {
 public:
 	bool Run();
 
-	void Update();
+	void Update(Ball &ball);
 };

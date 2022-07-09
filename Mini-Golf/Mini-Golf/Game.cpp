@@ -4,25 +4,25 @@
 
 bool Game::Run()
 {
-    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2); //These arguments are the initial position of the ball
+    //Initialize Ball
+    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball 
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(BLACK);
 
-        DrawText("Main Game!", GetScreenWidth() / 3, 100, 30, WHITE);
-
-        ball.Update();
-        ball.Draw();
+        Update(ball);
 
         EndDrawing();
-
     }
 	return true;
 }
 
-void Game::Update()
+void Game::Update(Ball &ball)
 {
-	return;
+    DrawText("Main Game!", GetScreenWidth() / 3, 100, 30, WHITE);
+
+    ball.Update();
+    ball.Draw();
 }
