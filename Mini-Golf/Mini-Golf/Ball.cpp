@@ -1,5 +1,4 @@
 #include "Ball.h"
-#include <iostream>
 
 Ball::Ball(int X, int Y, int Radius, Color Color)
 {
@@ -9,8 +8,9 @@ Ball::Ball(int X, int Y, int Radius, Color Color)
 
 	color = Color;
 
-	velocity.x = 0;
-	velocity.y = 0;
+	velocity = { 0, 0 };
+
+	velocityOnceReleased = { 0, 0 };
 }
 
 void Ball::Draw()
@@ -22,21 +22,34 @@ void Ball::Update()
 {
 	GetVelocity();
 
-	posX += velocity.x;
-	posY += velocity.y;
+	posX += velocity.x * velocityMultiplier * GetFrameTime();
+	posY += velocity.y * velocityMultiplier * GetFrameTime();
 }
 
 void Ball::GetVelocity()
 {
 	if (BallIsPressed())
 	{
-		selected = true; //Ball is selected
+		selected = !selected; //The ball is selected/unselected depending on if it was selected before
 	}
+
 	if (selected)
 	{
 		color = ORANGE;
-		distance = CalculateDistance(); //Get the distance between the ball and mouse
-		std::cout << distance;
+
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+		{
+			velocityOnceReleased = CalculateVelocity(); //Get the distance between the ball and mouse
+		}
+
+		if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+		{
+			velocity = velocityOnceReleased;
+		}
+	}
+	else
+	{
+		color = WHITE;
 	}
 }
 
@@ -49,14 +62,14 @@ bool Ball::BallIsPressed() // Checks if ball is pressed.
 	return false;
 }
 
-float Ball::CalculateDistance()
+Vector2 Ball::CalculateVelocity()
 {
 	float disX = posX - GetMousePosition().x; //Get horizontal distance between mouse and ball
 	float disY = posY - GetMousePosition().y; //Get vertical distance between mouse and ball
 
-	float dis = sqrt(pow(disX, 2) + pow(disY, 2)); // calculate distance using Pythagoreas theorem
+	//float dis = sqrt(pow(disX, 2) + pow(disY, 2)); // calculate distance using Pythagoreas theorem
 	
-	return dis;
+	return Vector2{disX, disY};
 }
 
 

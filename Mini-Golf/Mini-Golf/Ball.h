@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include <iostream>
 #include <cmath>
 
 class Ball 
@@ -19,14 +20,15 @@ private:
 	Color color;
 
 	Vector2 velocity;
+	Vector2 velocityOnceReleased;
+
+	const float velocityMultiplier = 1.8;
 
 	bool selected = false;
-
-	float distance;
 
 	void GetVelocity();
 
 	bool BallIsPressed();
 
-	float CalculateDistance();
+	Vector2 CalculateVelocity();
 };
