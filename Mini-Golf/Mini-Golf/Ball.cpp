@@ -128,3 +128,13 @@ void Ball::Shrink()
 {
 	radius -= 2;
 }
+
+void Ball::SetX(int pos)
+{
+	posX = pos;
+}
+
+void Ball::SetY(int pos)
+{
+	posY = pos;
+}

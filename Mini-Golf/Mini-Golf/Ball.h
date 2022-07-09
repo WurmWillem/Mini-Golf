@@ -20,7 +20,12 @@ public:
 
 	void Shrink();
 
+	void SetX(int pos);
+
+	void SetY(int pos);
+
 private:
+
 	int posX;
 	int posY;
 
@@ -44,5 +49,4 @@ private:
 	void CheckWallCollision();
 
 	void DecreaseVelocity();
-
 };

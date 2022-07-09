@@ -6,7 +6,6 @@ Hole::Hole(int Radius)
 {
 	radius = Radius;
 	holePosition = { (float) GetScreenWidth() / 2, 100};
-	holePosition = { (float)GetScreenWidth() / 2, 100 };
 	collided = false;
 }
 
