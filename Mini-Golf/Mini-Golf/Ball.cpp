@@ -28,16 +28,15 @@ void Ball::Update()
 
 void Ball::GetVelocity()
 {
-	if (BallIsPressed())
-	{
-		selected = true; //Ball is selected
-	}
+	if (BallIsPressed()) selected = true; // Ball is selected
 	if (selected)
 	{
 		color = ORANGE;
 		distance = CalculateDistance(); //Get the distance between the ball and mouse
-		std::cout << distance;
+		DrawText("Distance: ", 20, 780, 16, WHITE);
+		DrawText(TextFormat("%.2f", distance), 20 + MeasureText("Distance: ", 16), 780, 16, WHITE);
 	}
+	if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) selected = false;
 }
 
 bool Ball::BallIsPressed() // Checks if ball is pressed.
