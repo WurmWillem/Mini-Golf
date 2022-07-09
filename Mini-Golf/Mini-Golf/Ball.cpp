@@ -22,6 +22,8 @@ void Ball::Update()
 {
 	GetVelocity();
 
+	CheckCollision();
+
 	posX += velocity.x * velocityMultiplier * GetFrameTime();
 	posY += velocity.y * velocityMultiplier * GetFrameTime();
 }
@@ -61,6 +63,18 @@ Vector2 Ball::CalculateVelocity()
 	//float dis = sqrt(pow(disX, 2) + pow(disY, 2)); // calculate distance using Pythagoreas theorem
 	
 	return Vector2{disX, disY};
+}
+
+void Ball::CheckCollision()
+{
+	if (posX >= GetScreenWidth() || posX <= 0) 
+	{
+		velocity.x *= -1;
+	}
+	if (posY >= GetScreenHeight() || posY <= 0)
+	{
+		velocity.y *= -1;
+	}
 }
 
 
