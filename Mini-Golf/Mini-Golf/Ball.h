@@ -22,7 +22,7 @@ private:
 	Vector2 velocity;
 	Vector2 velocityOnceReleased;
 
-	const float velocityMultiplier = 1.8;
+	const float velocityMultiplier = 1.8f;
 
 	bool selected = false;
 
@@ -32,5 +32,7 @@ private:
 
 	Vector2 CalculateVelocity();
 
-	void CheckCollision();
+	void CheckWallCollision();
+
+	void DecreaseVelocity();
 };
