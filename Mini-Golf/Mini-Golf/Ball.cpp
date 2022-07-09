@@ -26,13 +26,15 @@ void Ball::UpdatePosition()
 
 	posX += velocity.x * velocityMultiplier * GetFrameTime();
 	posY += velocity.y * velocityMultiplier * GetFrameTime();
+
+	DecreaseVelocity();
 }
 
 void Ball::GetVelocity()
 {
 	if (BallIsPressed()) selected = true;
 
-	if (selected)
+	if (selected && velocity.x == 0 && velocity.y == 0)
 	{
 		color = ORANGE;
 		velocityOnceReleased = CalculateVelocity(); //Get the distance between the ball and mouse
@@ -67,6 +69,7 @@ Vector2 Ball::CalculateVelocity()
 
 void Ball::CheckWallCollision()
 {
+
 	if (posX >= GetScreenWidth() || posX <= 0) 
 	{
 		velocity.x *= -1;
@@ -74,6 +77,22 @@ void Ball::CheckWallCollision()
 	if (posY >= GetScreenHeight() || posY <= 0)
 	{
 		velocity.y *= -1;
+
+	if (posX + radius >= GetScreenWidth())
+	{
+		velocity.x *= -1;
+		posX = GetScreenWidth() - radius;
+	}
+	else if (posX - radius <= 0)
+	{
+		velocity.x *= -1;
+		posX = radius;
+	}
+	if (posY + radius >= GetScreenHeight())
+	{
+		velocity.y *= -1;
+		posY = GetScreenHeight() - radius;
+
 	}
 	else if (posY - radius <= 0)
 	{
@@ -81,6 +100,16 @@ void Ball::CheckWallCollision()
 		posY = radius;
 	}
 }
+
+
+void Ball::DecreaseVelocity()
+{
+	
+	//std::cout << "X = " << velocity.x / velocity.y << "\n";
+	//std::cout << "Y = " << velocity.y << "\n";
+}
+
+
 
 void Ball::DecreaseVelocity()
 {
