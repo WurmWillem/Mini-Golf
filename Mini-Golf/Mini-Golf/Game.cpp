@@ -4,7 +4,8 @@
 
 bool Game::Run()
 {
-    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2); //These arguments are the initial position of the ball
+    //Initialize Ball
+    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball 
 
     while (!WindowShouldClose())
     {
