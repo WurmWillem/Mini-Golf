@@ -1,28 +1,37 @@
 #include "raylib.h"
 #include "Game.h"
 #include "Ball.h"
+#include "Hole.h"
 
 bool Game::Run()
 {
-    //Initialize Ball
-    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball 
+    //Initialize components
+    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball
+    Hole hole(16);
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(BLACK);
+        ClearBackground(DARKGRAY);
 
-        Update(ball);
+        Update(ball, hole);
 
         EndDrawing();
     }
 	return true;
 }
 
-void Game::Update(Ball &ball)
+void Game::Update(Ball &ball, Hole &hole)
 {
-    DrawText("Main Game!", GetScreenWidth() / 3, 100, 30, WHITE);
+    DrawText("Main Game!", GetScreenWidth() / 3, 140, 30, WHITE);
 
-    ball.Update();
+    hole.CheckCollision(ball);
+    hole.Draw();
+
+    // if hole collide ball -> ball goes in
+    // not  working
+    if (hole.collided) ball.Shrink();
+
+    ball.UpdatePosition();
     ball.Draw();
 }

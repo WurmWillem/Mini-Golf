@@ -3,17 +3,26 @@
 #include <iostream>
 #include <cmath>
 
-class Ball 
+class Ball
 {
 public:
 	Ball(int X, int Y, int Radius, Color Color);
 
-	void Update();
+	void UpdatePosition();
+
 	void Draw();
 
+	int GetX();
+
+	int GetY();
+
+	int GetRadius();
+
+	void Shrink();
+
 private:
-	int posX; 
-	int posY; 
+	int posX;
+	int posY;
 
 	int radius;
 
@@ -35,4 +44,8 @@ private:
 	void CheckWallCollision();
 
 	void DecreaseVelocity();
+
 };
+
+};
+
