@@ -11,8 +11,8 @@ public:
 	void CheckCollision(Ball& ball);
 
 	bool collided;
-private:
 
+private:
 	Vector2 holePosition;
 
 	int radius;

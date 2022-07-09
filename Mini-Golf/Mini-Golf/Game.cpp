@@ -28,10 +28,13 @@ void Game::Update(Ball &ball, Hole &hole)
     hole.CheckCollision(ball);
     hole.Draw();
 
-    // if hole collide ball -> ball goes in
-    // not  working
-    if (hole.collided) ball.Shrink();
+    if (hole.collided)
+    {
+        ball.Shrink();
+        ball.SetX(GetScreenWidth() / 2);
+        ball.SetY(100);
+    }
 
-    ball.UpdatePosition();
     ball.Draw();
+    ball.UpdatePosition();
 }
