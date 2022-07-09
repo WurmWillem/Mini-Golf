@@ -1,7 +1,22 @@
 #include "raylib.h"
 #include "Game.h"
 
-void Game::Start()
+bool Game::Run()
 {
-	DrawText("Congrats! You created your first window!", 0, 0, 20, LIGHTGRAY);
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(BLACK);
+
+        DrawText("Main Game!", 100, 100, 30, WHITE);
+
+        EndDrawing();
+
+    }
+	return true;
+}
+
+void Game::Update()
+{
+	return;
 }

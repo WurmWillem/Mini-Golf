@@ -3,5 +3,7 @@
 class Game 
 {
 public:
-	static void Start();
+	bool Run();
+
+	void Update();
 };
