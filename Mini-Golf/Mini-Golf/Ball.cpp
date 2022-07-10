@@ -69,15 +69,6 @@ Vector2 Ball::CalculateVelocity()
 
 void Ball::CheckWallCollision()
 {
-
-	if (posX >= GetScreenWidth() || posX <= 0) 
-	{
-		velocity.x *= -1;
-	}
-	if (posY >= GetScreenHeight() || posY <= 0)
-	{
-		velocity.y *= -1;
-	}
 	if (posX + radius >= GetScreenWidth())
 	{
 		velocity.x *= -1;
@@ -101,12 +92,10 @@ void Ball::CheckWallCollision()
 	}
 }
 
-
 void Ball::DecreaseVelocity()
 {
-	
-	//std::cout << "X = " << velocity.x / velocity.y << "\n";
-	//std::cout << "Y = " << velocity.y << "\n";
+	velocity.x *= 0.98f;
+	velocity.y *= 0.98f;
 }
 
 int Ball::GetX()

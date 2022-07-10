@@ -10,8 +10,6 @@ public:
 
 	void CheckCollision(Ball& ball);
 
-	bool collided;
-
 private:
 	Vector2 holePosition;
 

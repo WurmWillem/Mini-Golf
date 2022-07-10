@@ -28,13 +28,6 @@ void Game::Update(Ball &ball, Hole &hole)
     hole.CheckCollision(ball);
     hole.Draw();
 
-    if (hole.collided)
-    {
-        ball.Shrink();
-        ball.SetX(GetScreenWidth() / 2);
-        ball.SetY(100);
-    }
-
     ball.Draw();
     ball.UpdatePosition();
 }
