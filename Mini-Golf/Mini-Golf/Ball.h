@@ -6,28 +6,22 @@
 class Ball
 {
 public:
+
 	Ball(int X, int Y, int Radius, Color Color);
+
+	float posX;
+	float posY;
 
 	void UpdatePosition();
 
 	void Draw();
 
-	int GetX();
-
-	int GetY();
-
 	int GetRadius();
 
 	void Shrink();
 
-	void SetX(int pos);
-
-	void SetY(int pos);
-
 private:
 
-	int posX;
-	int posY;
 
 	int radius;
 

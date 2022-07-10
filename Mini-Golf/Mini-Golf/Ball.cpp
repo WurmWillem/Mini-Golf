@@ -15,7 +15,7 @@ Ball::Ball(int X, int Y, int Radius, Color Color)
 
 void Ball::Draw()
 {
-	DrawCircle(posX, posY, radius, color);
+	DrawCircle(round(posX), round(posY), radius, color);
 }
 
 void Ball::UpdatePosition()
@@ -24,17 +24,17 @@ void Ball::UpdatePosition()
 
 	CheckWallCollision();
 
-	posX += round(velocity.x * velocityMultiplier * GetFrameTime());
-	posY += round(velocity.y * velocityMultiplier * GetFrameTime());
+	posX += velocity.x * velocityMultiplier * GetFrameTime();
+	posY += velocity.y * velocityMultiplier * GetFrameTime();
 
 	DecreaseVelocity();
 }
 
 void Ball::GetVelocity()
 {
-	if (BallIsPressed()) selected = true;
+	if (BallIsPressed() && (velocity.x < 3 && velocity.x > -3) && (velocity.y < 3 && velocity.y > -3)) selected = true;
 
-	if (selected && velocity.x == 0 && velocity.y == 0)
+	if (selected && (velocity.x < 2  && velocity.x > -2) && (velocity.y < 2 && velocity.y > -2))
 	{
 		color = ORANGE;
 		velocityOnceReleased = CalculateVelocity(); //Get the distance between the ball and mouse
@@ -92,20 +92,10 @@ void Ball::CheckWallCollision()
 	}
 }
 
-void Ball::DecreaseVelocity()
+void Ball::DecreaseVelocity() 
 {
-	velocity.x *= 0.98f;
-	velocity.y *= 0.98f;
-}
-
-int Ball::GetX()
-{
-	return posX;
-}
-
-int Ball::GetY()
-{
-	return posY;
+	velocity.x *= 0.975f;
+	velocity.y *= 0.975f;
 }
 
 int Ball::GetRadius()
@@ -116,14 +106,4 @@ int Ball::GetRadius()
 void Ball::Shrink()
 {
 	radius -= 2;
-}
-
-void Ball::SetX(int pos)
-{
-	posX = pos;
-}
-
-void Ball::SetY(int pos)
-{
-	posY = pos;
 }

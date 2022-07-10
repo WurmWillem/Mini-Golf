@@ -17,10 +17,10 @@ void Hole::Draw()
 
 void Hole::CheckCollision(Ball& ball)
 {
-	if (CheckCollisionCircles(holePosition, radius, { (float)ball.GetX(), (float)ball.GetY() }, ball.GetRadius()))
+	if (CheckCollisionCircles(holePosition, radius, { (float)ball.posX, (float)ball.posY }, ball.GetRadius()))
 	{
 		ball.Shrink();
-		ball.SetX(GetScreenWidth() / 2);
-		ball.SetY(100);
+		ball.posX = GetScreenWidth() / 2;
+		ball.posY = 100;;
 	}
 }
