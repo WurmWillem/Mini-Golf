@@ -7,7 +7,7 @@ public:
 	Obstacle(float X, float Y, float Width, float Height);
 
 	int x, y, width, height;
-	Rectangle rect;
+	Rectangle rect; //test
 	
 private:
 	
