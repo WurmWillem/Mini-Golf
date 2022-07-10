@@ -12,6 +12,10 @@ public:
 	float posX;
 	float posY;
 
+	int radius;
+
+	Vector2 velocity;
+
 	void UpdatePosition();
 
 	void Draw();
@@ -22,14 +26,8 @@ public:
 
 private:
 
-
-	int radius;
-
 	Color color;
-
 	
-
-	Vector2 velocity;
 	Vector2 velocityOnceReleased;
 
 	const float velocityMultiplier = 1.8f;

@@ -143,12 +143,16 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hole.cpp" />
     <ClCompile Include="Mini-Golf.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="Obstacles.cpp" />
     <ClCompile Include="Startscreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Hole.h" />
+    <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Obstacles.h" />
     <ClInclude Include="Startscreen.h" />
   </ItemGroup>
   <ItemGroup>

@@ -10,5 +10,5 @@ public:
 	Rectangle rect; //testtt
 	
 private:
-	
+
 };
