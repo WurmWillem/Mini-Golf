@@ -24,8 +24,8 @@ void Ball::UpdatePosition()
 
 	CheckWallCollision();
 
-	posX += velocity.x * velocityMultiplier * GetFrameTime();
-	posY += velocity.y * velocityMultiplier * GetFrameTime();
+	posX += round(velocity.x * velocityMultiplier * GetFrameTime());
+	posY += round(velocity.y * velocityMultiplier * GetFrameTime());
 
 	DecreaseVelocity();
 }
