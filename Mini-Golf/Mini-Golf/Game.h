@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include "Obstacle.h"
+#include "Obstacles.h"
 
 class Game
 {
@@ -13,7 +14,8 @@ public:
 
 	std::vector<Ball> balls;
 	std::vector<Hole> holes;
-	std::vector<Obstacle> obstacles;
+
+	Obstacles obstacles;
 
 	bool Run();
 

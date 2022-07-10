@@ -6,7 +6,7 @@
 class Obstacles
 {
 private:
-	std::vector<Obstacle> obstacles;
+	std::vector<Obstacle> obstacleList;
 
 public:
 	void Draw();
