@@ -24,6 +24,11 @@ void Game::Update()
     holes.at(0).CheckCollision(balls.at(0));
     holes.at(0).Draw();
 
+    for (const auto obstacle : obstacles)
+    {
+        DrawRectangleRec(obstacle.rect, GREEN);
+    }
+
     balls.at(0).Draw();
     balls.at(0).UpdatePosition();
 }
@@ -48,5 +53,9 @@ void Game::LoadLevel(int level)
     Hole hole(values.at(3));
     holes.push_back(hole);
 
-    // load obstacles
+    for (int i = 4; i < values.size(); i += 4)
+    {
+        Obstacle obstacle(values.at(i), values.at(i + 1), values.at(i + 2), values.at(i + 3));
+        obstacles.push_back(obstacle);
+    }
 }
