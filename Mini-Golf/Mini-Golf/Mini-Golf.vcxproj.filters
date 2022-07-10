@@ -41,5 +41,13 @@
     <Filter Include="Source">
       <UniqueIdentifier>{11f6572a-c5ef-4f07-8e8b-3d7c77eeb81a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Levels">
+      <UniqueIdentifier>{54e05873-508a-4b37-85f6-bfc66046a19c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Level1.txt">
+      <Filter>Levels</Filter>
+    </Text>
   </ItemGroup>
 </Project>
