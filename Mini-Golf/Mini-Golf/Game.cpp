@@ -38,12 +38,12 @@ void Game::LoadLevel(int level)
     lvlFile.open("level1.txt");
 
     std::vector<int> values;
-    std::string value;
+    int value;
 
     while ( lvlFile )
     {
         lvlFile >> value;
-        values.push_back(stoi(value));
+        values.push_back(value);
     }
     values.pop_back();
 
