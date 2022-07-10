@@ -14,7 +14,6 @@ public:
 
 	std::vector<Ball> balls;
 	std::vector<Hole> holes;
-
 	Obstacles obstacles;
 
 	bool Run();
