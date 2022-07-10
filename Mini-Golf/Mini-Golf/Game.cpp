@@ -3,10 +3,6 @@
 
 bool Game::Run()
 {
-    //Initialize components
-    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball
-    Hole hole(16);
-
     LoadLevel(1);
 
     while (!WindowShouldClose())
@@ -14,22 +10,22 @@ bool Game::Run()
         BeginDrawing();
         ClearBackground(DARKGRAY);
 
-        Update(ball, hole);
+        Update();
 
         EndDrawing();
     }
 	return true;
 }
 
-void Game::Update(Ball &ball, Hole &hole)
+void Game::Update()
 {
     DrawText("Main Game!", GetScreenWidth() / 3, 140, 30, WHITE);
 
-    hole.CheckCollision(ball);
-    hole.Draw();
+    holes.at(0).CheckCollision(balls.at(0));
+    holes.at(0).Draw();
 
-    ball.Draw();
-    ball.UpdatePosition();
+    balls.at(0).Draw();
+    balls.at(0).UpdatePosition();
 }
 
 void Game::LoadLevel(int level)
@@ -52,4 +48,5 @@ void Game::LoadLevel(int level)
     Hole hole(values.at(3));
     holes.push_back(hole);
 
+    // load obstacles
 }

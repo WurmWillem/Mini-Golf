@@ -5,18 +5,19 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "Obstacle.h"
 
 class Game
 {
 public:
-	//std::vector<Obstacle> obstacles;
 
 	std::vector<Ball> balls;
 	std::vector<Hole> holes;
+	std::vector<Obstacle> obstacles;
 
 	bool Run();
 
-	void Update(Ball& ball, Hole &hole);
+	void Update();
 
 	void LoadLevel(int level);
 };
