@@ -12,4 +12,6 @@ private:
 	int blockSize;
 
 	Color blockColor;
+
+	int page;
 };

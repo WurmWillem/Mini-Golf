@@ -4,6 +4,7 @@ LevelUI::LevelUI()
 {
 	blockSize = 150;
 	blockColor = GRAY;
+    page = 0;
 }
 
 void LevelUI::DrawUI()
