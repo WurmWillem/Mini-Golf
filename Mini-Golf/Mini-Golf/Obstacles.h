@@ -12,5 +12,14 @@ public:
 	void Draw();
 	void Add(Obstacle obstacle);
 	void CheckCollisionObstacles(Ball& ball);
+
+	bool BallTouchesXofObstacle(Ball& ball, Obstacle& obstacle);
+	bool BallTouchesYofObstacle(Ball& ball, Obstacle& obstacle);
+
+	bool BallisBetweenYofObstacle(Ball& ball, Obstacle& obs);
+	bool BallisBetweenXofObstacle(Ball& ball, Obstacle& obs);
+
+	bool BallTouchesLeft(Ball& ball, Obstacle& obs);
+	bool BallTouchesRight(Ball& ball, Obstacle& obs);
 };
 
