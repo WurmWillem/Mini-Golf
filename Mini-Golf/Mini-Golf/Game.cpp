@@ -56,9 +56,31 @@ void Game::LoadLevel(int level)
     holes.push_back(hole);
 
     // Load opstacles
-    for (int i = 6; i < values.size(); i += 4)
+    for (int i = 7; i < values.size(); i += 4)
     {
         Obstacle obstacle(values.at(i), values.at(i + 1), values.at(i + 2), values.at(i + 3));
         obstacles.Add(obstacle);
     }
+}
+
+void Game::ShowUI()
+{
+    // not done
+    // pls dont touch
+    std::vector<std::string> scoresForLevels;
+    return;
+}
+
+std::vector<int> Game::LoadScores()
+{
+    // 0 = no score
+    // 1 = hole-in-one
+    // 2 = double eagle
+    // 3 = eagle
+    // 4 = birdie
+    // 5 = par
+    // 6 = bogey
+    // 7 = double bogey
+    // 8 = triple bogey
+    return std::vector<int> {};
 }

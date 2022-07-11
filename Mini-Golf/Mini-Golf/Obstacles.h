@@ -19,4 +19,3 @@ public:
 	bool BallisBetweenYofObstacle(Ball& ball, Obstacle& obs);
 	bool BallisBetweenXofObstacle(Ball& ball, Obstacle& obs);
 };
-

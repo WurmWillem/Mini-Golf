@@ -4,8 +4,9 @@ line 3: ball radius
 line 4: hole X
 line 5: hole Y
 line 6: hole radius
-line 7: first obstacle X
-line 8: first obstacle Y
-line 9: first obstacle width
-line 10: first obstacle height
+line 7: strokes for par
+line 8: first obstacle X
+line 9: first obstacle Y
+line 10: first obstacle width
+line 11: first obstacle height
 other lines: more obstacles, like line 5-8

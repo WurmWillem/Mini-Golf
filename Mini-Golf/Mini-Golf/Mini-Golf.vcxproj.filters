@@ -76,5 +76,8 @@
     <Text Include="Level5.txt">
       <Filter>Levels</Filter>
     </Text>
+    <Text Include="Scores.txt">
+      <Filter>Levels</Filter>
+    </Text>
   </ItemGroup>
 </Project>

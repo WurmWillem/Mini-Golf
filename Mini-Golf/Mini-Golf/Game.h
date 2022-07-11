@@ -14,6 +14,7 @@ public:
 
 	std::vector<Ball> balls;
 	std::vector<Hole> holes;
+	std::vector<int> scores;
 	Obstacles obstacles;
 
 	bool Run();
@@ -21,4 +22,8 @@ public:
 	void Update();
 
 	void LoadLevel(int level);
+
+	void ShowUI();
+
+	std::vector<int> LoadScores();
 };
