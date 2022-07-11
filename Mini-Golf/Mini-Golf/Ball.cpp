@@ -1,6 +1,6 @@
 #include "Ball.h"
 
-Ball::Ball(int X, int Y, int Radius, Color Color)
+Ball::Ball(float X, float Y, int Radius, Color Color)
 {
 	posX = X;
 	posY = Y;
@@ -15,6 +15,7 @@ Ball::Ball(int X, int Y, int Radius, Color Color)
 
 void Ball::Draw()
 {
+	DrawCircle(round(posX), round(posY), radius + 2, BLACK);
 	DrawCircle(round(posX), round(posY), radius, color);
 }
 
@@ -50,7 +51,7 @@ void Ball::GetVelocity()
 
 bool Ball::BallIsPressed() // Checks if ball is pressed.
 {
-	if (CheckCollisionPointCircle(Vector2{ (float)GetMousePosition().x, (float)GetMousePosition().y }, Vector2{ (float)posX, (float)posY }, radius) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	if (CheckCollisionPointCircle(Vector2{ (float)GetMousePosition().x, (float)GetMousePosition().y }, Vector2{ posX, posY }, radius) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		return true;
 	}
