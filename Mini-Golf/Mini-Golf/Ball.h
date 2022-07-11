@@ -16,6 +16,8 @@ public:
 
 	Vector2 velocity;
 
+	const float velocityMultiplier = 1.8f;
+
 	void UpdatePosition();
 
 	void Draw();
@@ -29,8 +31,6 @@ private:
 	Color color;
 	
 	Vector2 velocityOnceReleased;
-
-	const float velocityMultiplier = 1.8f;
 
 	bool selected = false;
 

@@ -4,7 +4,7 @@ void Obstacles::Draw()
 {
 	for (int i = 0; i < obstacleList.size(); i++)
 	{
-		DrawRectangleRec(obstacleList[i].rect, RAYWHITE);
+		DrawRectangleRec(obstacleList[i].rect, GREEN);
 	}
 }
 
@@ -34,9 +34,11 @@ void Obstacles::CheckCollisionObstacles(Ball& ball) //This method is not finishe
 	}
 }
 
+
+// boven links goed, onder recht slecht
 bool Obstacles::BallTouchesXofObstacle(Ball& ball, Obstacle& obs)
 {
-	if (ball.posX + ball.radius > obs.x && ball.posX - ball.radius < obs.x + obs.width)
+	if (ball.posX + ball.radius + (ball.velocity.x * ball.velocityMultiplier * GetFrameTime()) > obs.x && ball.posX - ball.radius + (ball.velocity.x * ball.velocityMultiplier * GetFrameTime()) < obs.x + obs.width)
 	{
 		return true;
 	}
@@ -45,7 +47,7 @@ bool Obstacles::BallTouchesXofObstacle(Ball& ball, Obstacle& obs)
 
 bool Obstacles::BallTouchesYofObstacle(Ball& ball, Obstacle& obs)
 {
-	if (ball.posY + ball.radius > obs.y && ball.posY - ball.radius < obs.y + obs.height)
+	if (ball.posY + ball.radius + (ball.velocity.y * ball.velocityMultiplier * GetFrameTime()) > obs.y && ball.posY - ball.radius + (ball.velocity.y * ball.velocityMultiplier * GetFrameTime()) < obs.y + obs.height)
 	{
 		return true;
 	}

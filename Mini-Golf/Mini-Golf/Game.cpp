@@ -30,8 +30,8 @@ void Game::Update()
     obstacles.CheckCollisionObstacles(balls.at(0));
 
     // Ball
-    balls.at(0).Draw();
     balls.at(0).UpdatePosition();
+    balls.at(0).Draw();
 }
 
 void Game::LoadLevel(int level)
