@@ -22,6 +22,7 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="LevelUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -42,6 +43,7 @@
     <ClInclude Include="Obstacle.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="LevelUI.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

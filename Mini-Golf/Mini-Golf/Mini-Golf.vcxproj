@@ -142,6 +142,7 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hole.cpp" />
+    <ClCompile Include="LevelUI.cpp" />
     <ClCompile Include="Mini-Golf.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Obstacles.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Hole.h" />
+    <ClInclude Include="LevelUI.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Obstacles.h" />
     <ClInclude Include="Startscreen.h" />

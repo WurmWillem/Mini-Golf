@@ -77,9 +77,16 @@ bool Game::ShowUI()
     };
     std::vector<int> scores = LoadScores();
 
-    for (int i = 0; i < scores.size(); i++)
+    LevelUI UI;
+
+    while (!WindowShouldClose())
     {
-        std::cout << "Level " << i + 1 << ": " << possibleScores[scores[i]] << "\n";
+        BeginDrawing();
+        ClearBackground(LIGHTGRAY);
+
+        UI.DrawUI();
+
+        EndDrawing();
     }
 
     RunLevel(1);
