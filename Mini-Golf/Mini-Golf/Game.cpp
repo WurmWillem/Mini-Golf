@@ -1,9 +1,9 @@
 #include "Game.h"
 #include "raylib.h"
 
-bool Game::Run()
+bool Game::RunLevel(int level)
 {
-    LoadLevel(1);
+    LoadLevel(level);
 
     while (!WindowShouldClose())
     {
@@ -63,24 +63,49 @@ void Game::LoadLevel(int level)
     }
 }
 
-void Game::ShowUI()
+bool Game::ShowUI()
 {
-    // not done
-    // pls dont touch
-    std::vector<std::string> scoresForLevels;
-    return;
+    std::vector<std::string> possibleScores = {
+        "no score",
+        "hole-in-one",
+        "double eagle",
+        "eagle",
+        "birdie",
+        "par",
+        "bogey",
+        "double bogey",
+        "triple bogey"
+    };
+    std::vector<int> scores = LoadScores();
+
+    for (int i = 0; i < scores.size(); i++)
+    {
+        std::cout << "Level " << i + 1 << ": " << possibleScores[scores[i]] << "\n";
+    }
+
+    RunLevel(1);
+
+    return true;
 }
 
 std::vector<int> Game::LoadScores()
 {
-    // 0 = no score
-    // 1 = hole-in-one
-    // 2 = double eagle
-    // 3 = eagle
-    // 4 = birdie
-    // 5 = par
-    // 6 = bogey
-    // 7 = double bogey
-    // 8 = triple bogey
-    return std::vector<int> {};
+    
+
+    std::ifstream scoreFile;
+    scoreFile.open("Scores.txt");
+
+    std::vector<int> scores;
+    int score;
+
+    // Read values from file
+    while (scoreFile)
+    {
+        // Values to Vector
+        scoreFile >> score;
+        scores.push_back(score);
+    }
+    scores.pop_back();
+
+    return scores;
 }

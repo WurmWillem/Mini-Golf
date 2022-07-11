@@ -17,13 +17,13 @@ public:
 	std::vector<int> scores;
 	Obstacles obstacles;
 
-	bool Run();
+	bool RunLevel(int level);
 
 	void Update();
 
 	void LoadLevel(int level);
 
-	void ShowUI();
+	bool ShowUI();
 
 	std::vector<int> LoadScores();
 };

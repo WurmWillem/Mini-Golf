@@ -1,0 +1,9 @@
+ 0 = no score
+ 1 = hole-in-one
+ 2 = double eagle
+ 3 = eagle
+ 4 = birdie
+ 5 = par
+ 6 = bogey
+ 7 = double bogey
+ 8 = triple bogey
