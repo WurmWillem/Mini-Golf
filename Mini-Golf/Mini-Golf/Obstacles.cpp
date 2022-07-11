@@ -28,14 +28,9 @@ void Obstacles::CheckCollisionObstacles(Ball& ball) //This method is not finishe
 		{
 			ball.velocity.y *= -1;
 		}
-		//std::cout << BallisBetweenYofObstacle(ball, obs) << "\n";
-		//std::cout << ball.posX - ball.radius << "\n";
-		//std::cout << obs.x + obs.width << "\n";
 	}
 }
 
-
-// boven links goed, onder recht slecht
 bool Obstacles::BallTouchesXofObstacle(Ball& ball, Obstacle& obs)
 {
 	if (ball.posX + ball.radius + (ball.velocity.x * ball.velocityMultiplier * GetFrameTime()) > obs.x && ball.posX - ball.radius + (ball.velocity.x * ball.velocityMultiplier * GetFrameTime()) < obs.x + obs.width)
@@ -71,4 +66,3 @@ bool Obstacles::BallisBetweenXofObstacle(Ball& ball, Obstacle& obs)
 	}
 	return false;
 }
-
