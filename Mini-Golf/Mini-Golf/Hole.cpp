@@ -6,15 +6,13 @@ Hole::Hole(float X, float Y, float Radius)
 {
 	radius = Radius;
 	x = X;
-	Y = Y;
+	y = Y;
 	holePosition = { x, y };
 }
 
 void Hole::Draw()
 {
 	DrawCircle((int) holePosition.x, (int) holePosition.y, radius, BLACK);
-
-	return;
 }
 
 void Hole::CheckCollision(Ball& ball)
