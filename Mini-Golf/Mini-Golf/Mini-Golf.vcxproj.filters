@@ -16,6 +16,12 @@
     <ClCompile Include="Startscreen.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Obstacles.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -28,6 +34,12 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacles.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Level1.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Levels explained.txt">
       <Filter>Levels</Filter>
     </Text>
   </ItemGroup>

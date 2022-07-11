@@ -9,6 +9,9 @@ public:
 	int x, y, width, height;
 	Rectangle rect;
 
-private:
+	float x, y, width, height;
+	Rectangle rect; //testtt
 	
+private:
+
 };

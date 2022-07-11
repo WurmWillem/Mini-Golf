@@ -3,10 +3,6 @@
 
 bool Game::Run()
 {
-    //Initialize components
-    Ball ball(GetScreenWidth() / 2, GetScreenHeight() / 2, 10, WHITE); //These arguments are the initial position, radius and color of the ball
-    Hole hole(16);
-
     LoadLevel(1);
 
     while (!WindowShouldClose())
@@ -14,42 +10,57 @@ bool Game::Run()
         BeginDrawing();
         ClearBackground(DARKGRAY);
 
-        Update(ball, hole);
+        Update();
 
         EndDrawing();
     }
 	return true;
 }
 
-void Game::Update(Ball &ball, Hole &hole)
+void Game::Update()
 {
     DrawText("Main Game!", GetScreenWidth() / 3, 140, 30, WHITE);
 
-    hole.CheckCollision(ball);
-    hole.Draw();
+    // Hole
+    holes.at(0).CheckCollision(balls.at(0));
+    holes.at(0).Draw();
+    
+    // Obstacles
+    obstacles.Draw();
+    obstacles.CheckCollisionObstacles(balls.at(0));
 
-    ball.Draw();
-    ball.UpdatePosition();
+    // Ball
+    balls.at(0).Draw();
+    balls.at(0).UpdatePosition();
 }
 
 void Game::LoadLevel(int level)
 {
     std::ifstream lvlFile;
-    lvlFile.open("level1.txt");
+    lvlFile.open("level" + std::to_string(level) + ".txt");
 
     std::vector<int> values;
     int value;
 
+    // Read values from file
     while ( lvlFile )
     {
+        // Values to Vector
         lvlFile >> value;
         values.push_back(value);
     }
     values.pop_back();
 
+    // Load Ball + Hole
     Ball ball(values.at(0), values.at(1), values.at(2), WHITE);
     balls.push_back(ball);
     Hole hole(values.at(3));
     holes.push_back(hole);
 
+    // Load opstacles
+    for (int i = 4; i < values.size(); i += 4)
+    {
+        Obstacle obstacle(values.at(i), values.at(i + 1), values.at(i + 2), values.at(i + 3));
+        obstacles.Add(obstacle);
+    }
 }

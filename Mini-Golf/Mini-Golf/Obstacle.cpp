@@ -9,3 +9,6 @@ Obstacle::Obstacle(float X, float Y, float Width, float Height)
 
 	rect = { X, Y, Width, Height };
 }
+
+	rect = { x, y, width, height };
+}
