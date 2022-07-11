@@ -24,3 +24,4 @@ void Hole::CheckCollision(Ball& ball)
 		ball.posY = 100;;
 	}
 }
+//dwd
