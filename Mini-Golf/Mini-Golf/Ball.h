@@ -7,12 +7,12 @@ class Ball
 {
 public:
 
-	Ball(int X, int Y, int Radius, Color Color);
+	Ball(float X, float Y, float Radius, Color Color);
 
 	float posX;
 	float posY;
 
-	int radius;
+	float radius;
 
 	Vector2 velocity;
 
@@ -21,8 +21,6 @@ public:
 	void UpdatePosition();
 
 	void Draw();
-
-	int GetRadius();
 
 	void Shrink();
 

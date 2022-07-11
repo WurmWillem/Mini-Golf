@@ -8,7 +8,7 @@ bool Game::Run()
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(DARKGRAY);
+        ClearBackground(LIGHTGRAY);
 
         Update();
 
@@ -19,8 +19,6 @@ bool Game::Run()
 
 void Game::Update()
 {
-    DrawText("Main Game!", GetScreenWidth() / 3, 140, 30, WHITE);
-
     // Hole
     holes.at(0).CheckCollision(balls.at(0));
     holes.at(0).Draw();
@@ -39,8 +37,8 @@ void Game::LoadLevel(int level)
     std::ifstream lvlFile;
     lvlFile.open("level" + std::to_string(level) + ".txt");
 
-    std::vector<int> values;
-    int value;
+    std::vector<float> values;
+    float value;
 
     // Read values from file
     while ( lvlFile )

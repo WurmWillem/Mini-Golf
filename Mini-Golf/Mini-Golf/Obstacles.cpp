@@ -4,7 +4,9 @@ void Obstacles::Draw()
 {
 	for (int i = 0; i < obstacleList.size(); i++)
 	{
-		DrawRectangleRec(obstacleList[i].rect, GREEN);
+		//DrawRectangleRec(obstacleList[i].rect, GREEN);
+		DrawRectangleRounded(obstacleList[i].rect, 0.0f, 1, DARKGRAY);
+		DrawRectangleRoundedLines(obstacleList[i].rect, 0.15f, 1, 2.0f, BLACK);
 	}
 }
 
