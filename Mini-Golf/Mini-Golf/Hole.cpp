@@ -2,12 +2,10 @@
 #include "Ball.h"
 #include "raylib.h"
 
-Hole::Hole(float X, float Y, float Radius)
+Hole::Hole(float x_, float y_, float radius_)
 {
-	radius = Radius;
-	x = X;
-	y = Y;
-	holePosition = { x, y };
+	radius = radius_;
+	holePosition = { x_, y_ };
 }
 
 void Hole::Draw()
@@ -20,7 +18,7 @@ void Hole::CheckCollision(Ball& ball)
 	if (CheckCollisionCircles(holePosition, radius, { ball.posX, ball.posY }, ball.radius))
 	{
 		ball.Shrink();
-		ball.posX = (float) GetScreenWidth() / 2.0f;
-		ball.posY = 100;;
+		ball.posX = holePosition.x;
+		ball.posY = holePosition.y;;
 	}
 }
