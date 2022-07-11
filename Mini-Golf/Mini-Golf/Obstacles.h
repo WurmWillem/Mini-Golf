@@ -18,8 +18,5 @@ public:
 
 	bool BallisBetweenYofObstacle(Ball& ball, Obstacle& obs);
 	bool BallisBetweenXofObstacle(Ball& ball, Obstacle& obs);
-
-	bool BallTouchesLeft(Ball& ball, Obstacle& obs);
-	bool BallTouchesRight(Ball& ball, Obstacle& obs);
 };
 

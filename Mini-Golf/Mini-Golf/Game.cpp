@@ -37,7 +37,7 @@ void Game::Update()
 void Game::LoadLevel(int level)
 {
     std::ifstream lvlFile;
-    lvlFile.open("level1.txt");
+    lvlFile.open("level" + std::to_string(level) + ".txt");
 
     std::vector<int> values;
     int value;

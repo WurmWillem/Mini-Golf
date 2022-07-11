@@ -4,9 +4,7 @@ void Obstacles::Draw()
 {
 	for (int i = 0; i < obstacleList.size(); i++)
 	{
-		Rectangle rec = { 0,0,50,50 };
 		DrawRectangleRec(obstacleList[i].rect, RAYWHITE);
-		DrawRectangleRec(rec, RAYWHITE);
 	}
 }
 
@@ -71,3 +69,4 @@ bool Obstacles::BallisBetweenXofObstacle(Ball& ball, Obstacle& obs)
 	}
 	return false;
 }
+
