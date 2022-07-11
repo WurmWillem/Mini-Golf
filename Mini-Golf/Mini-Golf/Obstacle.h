@@ -6,6 +6,9 @@ class Obstacle
 public:
 	Obstacle(float X, float Y, float Width, float Height);
 
+	int x, y, width, height;
+	Rectangle rect;
+
 	float x, y, width, height;
 	Rectangle rect; //testtt
 	

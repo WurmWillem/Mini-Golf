@@ -6,5 +6,9 @@ Obstacle::Obstacle(float X, float Y, float Width, float Height)
 	y = Y;
 	width = Width;
 	height = Height;
+
+	rect = { X, Y, Width, Height };
+}
+
 	rect = { x, y, width, height };
 }
