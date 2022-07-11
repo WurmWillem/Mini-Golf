@@ -1,5 +1,6 @@
 #pragma once
 #include "Ball.h"
+#include "raylib.h"
 
 class Hole
 {

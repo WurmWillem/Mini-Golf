@@ -1,6 +1,4 @@
 #include "Hole.h"
-#include "Ball.h"
-#include "raylib.h"
 
 Hole::Hole(float x_, float y_, float radius_)
 {
@@ -19,6 +17,6 @@ void Hole::CheckCollision(Ball& ball)
 	{
 		ball.Shrink();
 		ball.posX = holePosition.x;
-		ball.posY = holePosition.y;;
+		ball.posY = holePosition.y;
 	}
 }
