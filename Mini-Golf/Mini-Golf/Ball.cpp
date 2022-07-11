@@ -1,6 +1,6 @@
 #include "Ball.h"
 
-Ball::Ball(float X, float Y, float Radius, Color Color)
+Ball::Ball(float X, float Y, int Radius, Color Color)
 {
 	posX = X;
 	posY = Y;
