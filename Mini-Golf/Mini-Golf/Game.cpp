@@ -52,11 +52,11 @@ void Game::LoadLevel(int level)
     // Load Ball + Hole
     Ball ball(values.at(0), values.at(1), values.at(2), WHITE);
     balls.push_back(ball);
-    Hole hole(values.at(3));
+    Hole hole(values.at(3), values.at(4), values.at(5));
     holes.push_back(hole);
 
     // Load opstacles
-    for (int i = 4; i < values.size(); i += 4)
+    for (int i = 6; i < values.size(); i += 4)
     {
         Obstacle obstacle(values.at(i), values.at(i + 1), values.at(i + 2), values.at(i + 3));
         obstacles.Add(obstacle);

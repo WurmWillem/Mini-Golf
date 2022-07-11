@@ -1,9 +1,11 @@
 line 1: ball X
 line 2: ball Y
 line 3: ball radius
-line 4: hole radius
-line 5: first obstacle X
-line 6: first obstacle Y
-line 7: first obstacle width
-line 8: first obstacle height
+line 4: hole X
+line 5: hole Y
+line 6: hole radius
+line 7: first obstacle X
+line 8: first obstacle Y
+line 9: first obstacle width
+line 10: first obstacle height
 other lines: more obstacles, like line 5-8

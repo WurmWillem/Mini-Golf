@@ -64,5 +64,17 @@
     <Text Include="Levels explained.txt">
       <Filter>Levels</Filter>
     </Text>
+    <Text Include="Level2.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level3.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level4.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level5.txt">
+      <Filter>Levels</Filter>
+    </Text>
   </ItemGroup>
 </Project>

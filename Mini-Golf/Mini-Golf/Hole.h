@@ -4,7 +4,7 @@
 class Hole
 {
 public:
-	Hole(float Radius);
+	Hole(float X, float Y, float Radius);
 
 	void Draw();
 
@@ -13,5 +13,7 @@ public:
 private:
 	Vector2 holePosition;
 
+	float x;
+	float y;
 	float radius;
 };

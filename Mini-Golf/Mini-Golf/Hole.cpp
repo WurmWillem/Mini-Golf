@@ -2,10 +2,12 @@
 #include "Ball.h"
 #include "raylib.h"
 
-Hole::Hole(float Radius)
+Hole::Hole(float X, float Y, float Radius)
 {
 	radius = Radius;
-	holePosition = { (float) GetScreenWidth() / 2, 100};
+	x = X;
+	Y = Y;
+	holePosition = { x, y };
 }
 
 void Hole::Draw()
