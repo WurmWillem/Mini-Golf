@@ -103,3 +103,9 @@ void Ball::Shrink()
 {
 	radius -= 2;
 }
+
+bool Ball::IsBallInHole()
+{
+	if (radius < 8) return true;
+	return false;
+}

@@ -31,7 +31,7 @@ int main()
         EndDrawing();
 
         // Onclick start game
-        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) closeGame = game.ShowUI();
+        if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) closeGame = game.ShowUI();
 
     }
 

@@ -20,7 +20,7 @@ public:
 
 	bool RunLevel(int level);
 
-	void Update();
+	bool Update();
 
 	void LoadLevel(int level);
 

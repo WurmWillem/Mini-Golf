@@ -24,6 +24,8 @@ public:
 
 	void Shrink();
 
+	bool IsBallInHole();
+
 private:
 
 	Color color;

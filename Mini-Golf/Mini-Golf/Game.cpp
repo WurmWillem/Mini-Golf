@@ -3,20 +3,21 @@
 bool Game::RunLevel(int level)
 {
     LoadLevel(level);
+    bool levelCompleted = false;
 
-    while (!WindowShouldClose())
+    while (!WindowShouldClose() && !levelCompleted)
     {
         BeginDrawing();
         ClearBackground(LIGHTGRAY);
 
-        Update();
+        levelCompleted = Update();
 
         EndDrawing();
     }
 	return true;
 }
 
-void Game::Update()
+bool Game::Update()
 {
     // Hole
     holes.at(0).CheckCollision(balls.at(0));
@@ -29,6 +30,7 @@ void Game::Update()
     // Ball
     balls.at(0).UpdatePosition();
     balls.at(0).Draw();
+    return balls.at(0).IsBallInHole();
 }
 
 void Game::LoadLevel(int level)
@@ -78,6 +80,7 @@ bool Game::ShowUI()
     std::vector<int> scores = LoadScores();
 
     LevelUI UI;
+    int level;
 
     while (!WindowShouldClose())
     {
@@ -85,11 +88,11 @@ bool Game::ShowUI()
         ClearBackground(LIGHTGRAY);
 
         UI.DrawUI();
+        level = UI.checkClick();
 
+        if (level != 0) RunLevel(level);
         EndDrawing();
     }
-
-    RunLevel(1);
 
     return true;
 }
