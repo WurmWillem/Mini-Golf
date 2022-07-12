@@ -11,6 +11,7 @@ private:
 public:
 	void Draw();
 	void Add(Obstacle obstacle);
+	void Clear();
 	void CheckCollisionObstacles(Ball& ball);
 
 	bool BallTouchesXofObstacle(Ball& ball, Obstacle& obstacle);

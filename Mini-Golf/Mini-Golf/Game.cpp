@@ -66,19 +66,6 @@ void Game::LoadLevel(int level)
 
 bool Game::ShowUI()
 {
-    std::vector<std::string> possibleScores = {
-        "no score",
-        "hole-in-one",
-        "double eagle",
-        "eagle",
-        "birdie",
-        "par",
-        "bogey",
-        "double bogey",
-        "triple bogey"
-    };
-    std::vector<int> scores = LoadScores();
-
     LevelUI UI;
     int level;
 
@@ -91,30 +78,17 @@ bool Game::ShowUI()
         level = UI.checkClick();
 
         if (level != 0) RunLevel(level);
+        ResetGame();
         EndDrawing();
     }
 
     return true;
 }
 
-std::vector<int> Game::LoadScores()
+void Game::ResetGame()
 {
-    
-
-    std::ifstream scoreFile;
-    scoreFile.open("Scores.txt");
-
-    std::vector<int> scores;
-    int score;
-
-    // Read values from file
-    while (scoreFile)
-    {
-        // Values to Vector
-        scoreFile >> score;
-        scores.push_back(score);
-    }
-    scores.pop_back();
-
-    return scores;
+    std::vector<Ball> balls = {};
+    std::vector<Hole> holes = {};
+    std::vector<int> scores = {};
+    obstacles.Clear();
 }

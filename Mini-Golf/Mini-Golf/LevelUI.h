@@ -1,7 +1,8 @@
 #pragma once
 #include "raylib.h"
 #include <string>
-#include <iostream>
+#include <vector>
+#include "Game.h"
 
 class LevelUI
 {
@@ -12,6 +13,9 @@ public:
 
 	int checkClick();
 
+	void DrawScores();
+
+	std::vector<int> LoadScores();
 private:
 	int blockSize;
 

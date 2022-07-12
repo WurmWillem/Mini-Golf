@@ -67,3 +67,8 @@ bool Obstacles::BallisBetweenXofObstacle(Ball& ball, Obstacle& obs)
 	}
 	return false;
 }
+
+void Obstacles::Clear()
+{
+	obstacleList.clear();
+}

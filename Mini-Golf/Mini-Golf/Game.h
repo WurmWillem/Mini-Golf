@@ -26,5 +26,5 @@ public:
 
 	bool ShowUI();
 
-	std::vector<int> LoadScores();
+	void ResetGame();
 };

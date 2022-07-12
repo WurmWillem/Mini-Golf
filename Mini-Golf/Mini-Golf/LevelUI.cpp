@@ -114,3 +114,39 @@ int LevelUI::checkClick()
     }
     return 0;
 }
+
+std::vector<int> LevelUI::LoadScores()
+{
+    std::ifstream scoreFile;
+    scoreFile.open("Scores.txt");
+
+    std::vector<int> scores;
+    int score;
+
+    // Read values from file
+    while (scoreFile)
+    {
+        // Values to Vector
+        scoreFile >> score;
+        scores.push_back(score);
+    }
+    scores.pop_back();
+
+    return scores;
+}
+
+void LevelUI::DrawScores()
+{
+    std::vector<std::string> possibleScores = {
+        "no score",
+        "hole-in-one",
+        "double eagle",
+        "eagle",
+        "birdie",
+        "par",
+        "bogey",
+        "double bogey",
+        "triple bogey"
+    };
+    std::vector<int> scores = LoadScores();
+}
