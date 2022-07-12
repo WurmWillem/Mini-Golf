@@ -112,7 +112,7 @@ bool Ball::IsBallInHole()
 	{
 		DrawText("Good job", GetScreenWidth() / 2 - MeasureText("Good job", 40) / 2, 150, 40, DARKBLUE);
 		DrawText("Click to continue", GetScreenWidth() / 2 - MeasureText("Click to continue", 40) / 2, 220, 40, DARKBLUE);
-		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) return true;
+		if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) return true;
 	}
 	return false;
 }

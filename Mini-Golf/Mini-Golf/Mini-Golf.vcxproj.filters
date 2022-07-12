@@ -25,9 +25,6 @@
     <ClCompile Include="LevelUI.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Level7.txt">
-      <Filter>Levels</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -110,6 +107,9 @@
       <Filter>Levels</Filter>
     </Text>
     <Text Include="Level12.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level7.txt">
       <Filter>Levels</Filter>
     </Text>
   </ItemGroup>

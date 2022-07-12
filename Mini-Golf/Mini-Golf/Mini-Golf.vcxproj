@@ -142,7 +142,6 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hole.cpp" />
-    <ClCompile Include="Level7.txt" />
     <ClCompile Include="LevelUI.cpp" />
     <ClCompile Include="Mini-Golf.cpp" />
     <ClCompile Include="Obstacle.cpp" />
@@ -172,6 +171,7 @@
     <Text Include="Level4.txt" />
     <Text Include="Level5.txt" />
     <Text Include="Level6.txt" />
+    <Text Include="Level7.txt" />
     <Text Include="Level8.txt" />
     <Text Include="Level9.txt" />
     <Text Include="Levels explained.txt" />
