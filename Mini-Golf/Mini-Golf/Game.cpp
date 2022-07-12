@@ -68,7 +68,7 @@ bool Game::ShowUI()
 {
     LevelUI UI;
     int level;
-    UI.AddLevels();
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
@@ -85,7 +85,6 @@ bool Game::ShowUI()
         } 
         EndDrawing();
     }
-
     return true;
 }
 

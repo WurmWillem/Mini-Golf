@@ -5,19 +5,14 @@ LevelUI::LevelUI()
 	blockSize = 150;
 	blockColor = GRAY;
     page = 0;
-}
 
-void LevelUI::AddLevels()
-{
     float y = 30;
-
-    for (float rank = 0; rank < 4; rank++) //Vertical row levels
+    for (float row = 0; row < 4; row++) // Rows
     {
         float x = 70;
-
-        for (float column = 0; column < 3; column++) //Horizontal row levels
+        for (float row = 0; row < 3; row++) // Columns
         {
-            levels.push_back({ x, y, (float) blockSize, (float) blockSize });
+            levels.push_back({ x, y, (float)blockSize, (float)blockSize });
             x += 180;
         }
         y += 180;
