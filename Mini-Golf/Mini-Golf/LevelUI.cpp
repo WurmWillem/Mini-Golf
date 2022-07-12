@@ -42,10 +42,9 @@ int LevelUI::CheckClick()
         {
             if (CheckCollisionPointRec({ (float) GetMouseX(), (float) GetMouseY()}, levels[i]))
             {
-                return i + page * 12;
+                return i + 1 + page * 12;
             }
         }
-
     }
     return 0;
 }

@@ -79,9 +79,9 @@ bool Game::ShowUI()
         
         if (level != 0)
         {
-            std::cout << level;
-            //RunLevel(level);
-            //ResetGame();
+            //std::cout << level;
+            RunLevel(level);
+            ResetGame();
         } 
         EndDrawing();
     }
