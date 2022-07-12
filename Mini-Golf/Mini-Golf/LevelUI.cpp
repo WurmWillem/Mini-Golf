@@ -18,7 +18,6 @@ void LevelUI::AddLevels()
         for (float column = 0; column < 3; column++) //Horizontal row levels
         {
             levels.push_back({ x, y, (float) blockSize, (float) blockSize });
-
             x += 180;
         }
         y += 180;
@@ -34,47 +33,19 @@ void LevelUI::DrawUI()
     }
 }
 
-int LevelUI::checkClick()
+int LevelUI::CheckClick()
 {
     // If clicked
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
     {
-        // If column 1
-        if (GetMouseX() > 70 && GetMouseX() < 220)
+        for (int i = 0; i < levels.size(); i++)
         {
-            // If row 1
-            if (GetMouseY() > 30 && GetMouseY() < 180) return 1 + page * 12;
-            // If row 2
-            else if (GetMouseY() > 210 && GetMouseY() < 360) return 2 + page * 12;
-            // If row 3
-            else if (GetMouseY() > 390 && GetMouseY() < 540) return 3 + page * 12;
-            // If row 4
-            else if (GetMouseY() > 570 && GetMouseY() < 750) return 4 + page * 12;
+            if (CheckCollisionPointRec({ (float) GetMouseX(), (float) GetMouseY()}, levels[i]))
+            {
+                return i + page * 12;
+            }
         }
-        // If column 2
-        if (GetMouseX() > 250 && GetMouseX() < 400)
-        {
-            // If row 1
-            if (GetMouseY() > 30 && GetMouseY() < 180) return 5 + page * 12;
-            // If row 2
-            else if (GetMouseY() > 210 && GetMouseY() < 360) return 6 + page * 12;
-            // If row 3
-            else if (GetMouseY() > 390 && GetMouseY() < 540) return 7 + page * 12;
-            // If row 4
-            else if (GetMouseY() > 570 && GetMouseY() < 750) return 8 + page * 12;
-        }
-        // If column 3
-        if (GetMouseX() > 430 && GetMouseX() < 580)
-        {
-            // If row 1
-            if (GetMouseY() > 30 && GetMouseY() < 180) return 9 + page * 12;
-            // If row 2
-            else if (GetMouseY() > 210 && GetMouseY() < 360) return 10 + page * 12;
-            // If row 3
-            else if (GetMouseY() > 390 && GetMouseY() < 540) return 11 + page * 12;
-            // If row 4
-            else if (GetMouseY() > 570 && GetMouseY() < 750) return 12 + page * 12;
-        }
+
     }
     return 0;
 }

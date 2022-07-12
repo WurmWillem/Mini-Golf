@@ -74,14 +74,15 @@ bool Game::ShowUI()
         BeginDrawing();
         ClearBackground(LIGHTGRAY);
 
-        UI.DrawUI(); /*
-        level = UI.checkClick();
-
+        UI.DrawUI(); 
+        level = UI.CheckClick();
+        
         if (level != 0)
         {
-            RunLevel(level);
-            ResetGame();
-        } */
+            std::cout << level;
+            //RunLevel(level);
+            //ResetGame();
+        } 
         EndDrawing();
     }
 

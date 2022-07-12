@@ -11,7 +11,7 @@ public:
 
 	void DrawUI();
 
-	int checkClick();
+	int CheckClick();
 
 	void DrawScores();
 
