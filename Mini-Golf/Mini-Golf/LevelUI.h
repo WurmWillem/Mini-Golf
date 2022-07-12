@@ -15,7 +15,11 @@ public:
 
 	void DrawScores();
 
+	void AddLevels();
+
 	std::vector<int> LoadScores();
+
+	std::vector<Rectangle> levels;
 private:
 	int blockSize;
 

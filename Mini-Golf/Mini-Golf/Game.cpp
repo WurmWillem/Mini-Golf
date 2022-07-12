@@ -68,17 +68,20 @@ bool Game::ShowUI()
 {
     LevelUI UI;
     int level;
-
+    UI.AddLevels();
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(LIGHTGRAY);
 
-        UI.DrawUI();
+        UI.DrawUI(); /*
         level = UI.checkClick();
 
-        if (level != 0) RunLevel(level);
-        ResetGame();
+        if (level != 0)
+        {
+            RunLevel(level);
+            ResetGame();
+        } */
         EndDrawing();
     }
 
@@ -87,8 +90,8 @@ bool Game::ShowUI()
 
 void Game::ResetGame()
 {
-    std::vector<Ball> balls = {};
-    std::vector<Hole> holes = {};
-    std::vector<int> scores = {};
+    balls.clear();
+    holes.clear();
+    scores.clear();
     obstacles.Clear();
 }
