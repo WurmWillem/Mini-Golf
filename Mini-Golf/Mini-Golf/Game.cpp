@@ -76,12 +76,13 @@ bool Game::ShowUI()
         BeginDrawing();
         ClearBackground(LIGHTGRAY);
 
-        UI.DrawUI(); 
+        UI.DrawBlocks(); 
+        UI.DrawLevels();
+        UI.DrawScores();
         level = UI.CheckClick();
         
         if (level != 0)
         {
-            //std::cout << level;
             RunLevel(level);
             ResetGame();
         } 

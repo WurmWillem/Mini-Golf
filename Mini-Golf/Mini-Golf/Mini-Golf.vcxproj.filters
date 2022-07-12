@@ -25,6 +25,9 @@
     <ClCompile Include="LevelUI.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Level7.txt">
+      <Filter>Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -86,6 +89,27 @@
       <Filter>Levels</Filter>
     </Text>
     <Text Include="Scores explained.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="BestPossibleScores.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level6.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level8.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level9.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level10.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level11.txt">
+      <Filter>Levels</Filter>
+    </Text>
+    <Text Include="Level12.txt">
       <Filter>Levels</Filter>
     </Text>
   </ItemGroup>

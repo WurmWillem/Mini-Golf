@@ -9,7 +9,7 @@ class LevelUI
 public:
 	LevelUI();
 
-	void DrawUI();
+	void DrawBlocks();
 
 	void DrawLevels();
 

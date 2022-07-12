@@ -19,7 +19,7 @@ LevelUI::LevelUI()
     }
 }
 
-void LevelUI::DrawUI()
+void LevelUI::DrawBlocks()
 {
     for (int i = 0; i < levels.size(); i++)
     {
@@ -64,18 +64,38 @@ std::vector<int> LevelUI::LoadScores()
     return scores;
 }
 
+void LevelUI::DrawLevels()
+{
+    int level = 0;
+    float y = 60;
+    for (float row = 0; row < 4; row++) // Rows
+    {
+        float x = 85;
+        for (float row = 0; row < 3; row++) // Columns
+        {
+            level++;
+            DrawText(TextFormat("Level %i", level), x, y, 30, WHITE);
+            x += 180;
+        }
+        y += 180;
+    }
+}
+
 void LevelUI::DrawScores()
 {
-    std::vector<std::string> possibleScores = {
-        "no score",
-        "hole-in-one",
-        "double eagle",
-        "eagle",
-        "birdie",
-        "par",
-        "bogey",
-        "double bogey",
-        "triple bogey"
-    };
     std::vector<int> scores = LoadScores();
+
+    int i = 0;
+    float y = 100;
+    for (float row = 0; row < 4; row++) // Rows
+    {
+        float x = 85;
+        for (float row = 0; row < 3; row++) // Columns
+        {
+            DrawText(TextFormat("Score:  %i", scores[i]), x, y, 22, WHITE);
+            x += 180;
+            i++;
+        }
+        y += 180;
+    }
 }

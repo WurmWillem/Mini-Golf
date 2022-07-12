@@ -142,6 +142,7 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Hole.cpp" />
+    <ClCompile Include="Level7.txt" />
     <ClCompile Include="LevelUI.cpp" />
     <ClCompile Include="Mini-Golf.cpp" />
     <ClCompile Include="Obstacle.cpp" />
@@ -161,11 +162,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="BestPossibleScores.txt" />
     <Text Include="Level1.txt" />
+    <Text Include="Level10.txt" />
+    <Text Include="Level11.txt" />
+    <Text Include="Level12.txt" />
     <Text Include="Level2.txt" />
     <Text Include="Level3.txt" />
     <Text Include="Level4.txt" />
     <Text Include="Level5.txt" />
+    <Text Include="Level6.txt" />
+    <Text Include="Level8.txt" />
+    <Text Include="Level9.txt" />
     <Text Include="Levels explained.txt" />
     <Text Include="Scores explained.txt" />
     <Text Include="Scores.txt" />
