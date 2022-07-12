@@ -35,6 +35,34 @@ void Game::Update(Ball &ball, Hole &hole)
         ball.SetY(100);
     }
 
+<<<<<<< Updated upstream
     ball.Draw();
     ball.UpdatePosition();
+=======
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(LIGHTGRAY);
+
+        UI.DrawUI();
+        level = UI.checkClick();
+
+        if (level != 0)
+        {
+            RunLevel(level);
+            ResetGame();
+        }
+        EndDrawing();
+    }
+
+    return true;
+}
+
+void Game::ResetGame()
+{
+    balls.clear();
+    holes.clear();
+    scores.clear();
+    obstacles.Clear();
+>>>>>>> Stashed changes
 }
