@@ -32,9 +32,9 @@ void Ball::UpdatePosition()
 
 void Ball::GetVelocity()
 {
-	if (BallIsPressed() && (velocity.x < 3 && velocity.x > -3) && (velocity.y < 3 && velocity.y > -3)) selected = true;
+	if (BallIsPressed() && (velocity.x < 10 && velocity.x > -10) && (velocity.y < 10 && velocity.y > -10)) selected = true;
 
-	if (selected && (velocity.x < 2  && velocity.x > -2) && (velocity.y < 2 && velocity.y > -2))
+	if (selected && (velocity.x < 13  && velocity.x > -13) && (velocity.y < 13 && velocity.y > -13))
 	{
 		color = ORANGE;
 		velocityOnceReleased = CalculateVelocity(); //Get the distance between the ball and mouse
@@ -50,7 +50,7 @@ void Ball::GetVelocity()
 
 bool Ball::BallIsPressed() // Checks if ball is pressed.
 {
-	if (CheckCollisionPointCircle(Vector2{ (float)GetMousePosition().x, (float)GetMousePosition().y }, Vector2{ (float)posX, (float)posY }, radius) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+	if (CheckCollisionPointCircle(Vector2{ (float)GetMousePosition().x, (float)GetMousePosition().y }, Vector2{ posX, posY }, radius) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		return true;
 	}
@@ -94,13 +94,15 @@ void Ball::CheckWallCollision()
 
 void Ball::DecreaseVelocity() 
 {
-	velocity.x *= 0.975f;
-	velocity.y *= 0.975f;
+	velocity.x *= 0.963f;
+	velocity.y *= 0.963f;
+	std::cout << velocity.x << "\n";
+	
 }
 
-int Ball::GetRadius()
+void Ball::Shrink()
 {
-	return radius;
+	radius -= 2;
 }
 
 void Ball::Shrink()
