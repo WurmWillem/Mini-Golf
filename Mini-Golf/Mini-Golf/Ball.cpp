@@ -11,12 +11,14 @@ Ball::Ball(float X, float Y, float Radius, Color Color)
 	velocity = { 0, 0 };
 
 	velocityOnceReleased = { 0, 0 };
+
+	inHole = false;
 }
 
 void Ball::Draw()
 {
-	DrawCircle(round(posX), round(posY), radius + 2, BLACK);
-	DrawCircle(round(posX), round(posY), radius, color);
+	DrawCircle((int) round(posX), (int) round(posY), radius + 2, BLACK);
+	DrawCircle((int) round(posX), (int) round(posY), radius, color);
 }
 
 void Ball::UpdatePosition()
@@ -106,7 +108,7 @@ void Ball::Shrink()
 
 bool Ball::IsBallInHole()
 {
-	if (radius < 8)
+	if (inHole)
 	{
 		DrawText("Good job", GetScreenWidth() / 2 - MeasureText("Good job", 40) / 2, 150, 40, DARKBLUE);
 		DrawText("Click to continue", GetScreenWidth() / 2 - MeasureText("Click to continue", 40) / 2, 220, 40, DARKBLUE);

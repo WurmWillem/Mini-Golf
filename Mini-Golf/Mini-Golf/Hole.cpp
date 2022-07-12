@@ -18,5 +18,7 @@ void Hole::CheckCollision(Ball& ball)
 		ball.Shrink();
 		ball.posX = holePosition.x;
 		ball.posY = holePosition.y;
+
+		ball.inHole = true;
 	}
 }

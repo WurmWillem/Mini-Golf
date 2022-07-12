@@ -26,6 +26,8 @@ public:
 
 	bool IsBallInHole();
 
+	bool inHole;
+
 private:
 
 	Color color;
