@@ -12,7 +12,7 @@ LevelUI::LevelUI()
         float x = 70;
         for (float row = 0; row < 3; row++) // Columns
         {
-            levels.push_back({ x, y, (float)blockSize, (float)blockSize });
+            levels.push_back({ x, y, (float) blockSize, (float) blockSize });
             x += 180;
         }
         y += 180;
