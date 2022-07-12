@@ -14,6 +14,7 @@ bool Game::RunLevel(int level)
 
         EndDrawing();
     }
+    if (!levelCompleted) endApplication = true;
 	return true;
 }
 
@@ -68,8 +69,9 @@ bool Game::ShowUI()
 {
     LevelUI UI;
     int level;
+    endApplication = false;
 
-    while (!WindowShouldClose())
+    while (!WindowShouldClose() && !endApplication)
     {
         BeginDrawing();
         ClearBackground(LIGHTGRAY);

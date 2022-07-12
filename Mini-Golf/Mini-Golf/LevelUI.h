@@ -11,9 +11,11 @@ public:
 
 	void DrawUI();
 
-	int CheckClick();
+	void DrawLevels();
 
 	void DrawScores();
+
+	int CheckClick();
 
 	std::vector<int> LoadScores();
 

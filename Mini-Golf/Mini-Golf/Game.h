@@ -18,6 +18,8 @@ public:
 	std::vector<int> scores;
 	Obstacles obstacles;
 
+	bool endApplication;
+
 	bool RunLevel(int level);
 
 	bool Update();
