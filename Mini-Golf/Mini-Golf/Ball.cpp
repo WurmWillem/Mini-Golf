@@ -96,8 +96,8 @@ void Ball::CheckWallCollision()
 
 void Ball::DecreaseVelocity() 
 {
-	velocity.x *= 0.963f;
-	velocity.y *= 0.963f;
+	velocity.x *= 0.958f;
+	velocity.y *= 0.958f;
 }
 
 void Ball::Shrink()

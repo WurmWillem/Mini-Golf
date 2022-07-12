@@ -16,7 +16,7 @@ public:
 
 	Vector2 velocity;
 
-	const float velocityMultiplier = 2.5f;
+	const float velocityMultiplier = 2.7f;
 
 	void UpdatePosition();
 
