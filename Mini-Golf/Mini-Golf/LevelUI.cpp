@@ -13,14 +13,20 @@ void LevelUI::DrawUI()
     Rectangle level1 = { 70, 30, blockSize, blockSize };
     DrawRectangleRounded(level1, 0.1f, 0, blockColor);
     DrawRectangleRoundedLines(level1, 0.15f, 0, 2, BLACK);
+    DrawText(TextFormat("Level %i", 1 + page * 12), 80, 60, 30, WHITE);
+    DrawText("No score", 80, 110, 20, WHITE);
 
     Rectangle level2 = { 250, 30, blockSize, blockSize };
     DrawRectangleRounded(level2, 0.1f, 0, blockColor);
     DrawRectangleRoundedLines(level2, 0.15f, 0, 2, BLACK);
+    DrawText(TextFormat("Level %i", 2 + page * 12), 260, 60, 30, WHITE);
+    DrawText("No score", 260, 110, 20, WHITE);
 
     Rectangle level3 = { 430, 30, blockSize, blockSize };
     DrawRectangleRounded(level3, 0.1f, 0, blockColor);
     DrawRectangleRoundedLines(level3, 0.15f, 0, 2, BLACK);
+    DrawText(TextFormat("Level %i", 3 + page * 12), 440, 60, 30, WHITE);
+    DrawText("No score", 440, 110, 20, WHITE);
 
     // Levels 4-6
     Rectangle level4 = { 70, 210, blockSize, blockSize };
@@ -61,7 +67,6 @@ void LevelUI::DrawUI()
     DrawRectangleRounded(level12, 0.1f, 0, blockColor);
     DrawRectangleRoundedLines(level12, 0.15f, 0, 2, BLACK);
 
-    DrawText("JUST PRESS ESC", 50, 100, 30, RED);
-    DrawText("THIS WILL BE IMPLEMENTED LATER", 50, 140, 30, RED);
-    
+    DrawText("JUST PRESS ESC", 50, 200, 30, RED);
+    DrawText("THIS WILL BE IMPLEMENTED LATER", 50, 240, 30, RED);
 }
