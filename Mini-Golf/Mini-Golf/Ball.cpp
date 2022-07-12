@@ -47,7 +47,6 @@ void Ball::GetVelocity()
 			velocity = velocityOnceReleased;
 			color = WHITE;
 			selected = false;
-			decreaseVelocity = true;
 		}
 	}
 }
@@ -99,8 +98,6 @@ void Ball::DecreaseVelocity()
 {
 	velocity.x *= 0.975f;
 	velocity.y *= 0.975f;
-	std::cout << velocity.x << "\n";
-	//
 }
 
 void Ball::Shrink()
