@@ -6,16 +6,12 @@ LevelUI::LevelUI()
 	blockColor = GRAY;
     page = 0;
 
-    float y = 30;
     for (float row = 0; row < 4; row++) // Rows
     {
-        float x = 70;
-        for (float row = 0; row < 3; row++) // Columns
+        for (float column = 0; column < 3; column++) // Columns
         {
-            levels.push_back({ x, y, (float) blockSize, (float) blockSize });
-            x += 180;
+            levels.push_back({ 70 + column * 180, 30 + row * 180, (float) blockSize, (float) blockSize });
         }
-        y += 180;
     }
 }
 
@@ -67,17 +63,14 @@ std::vector<int> LevelUI::LoadScores()
 void LevelUI::DrawLevels()
 {
     int level = 0;
-    float y = 60;
+
     for (float row = 0; row < 4; row++) // Rows
     {
-        float x = 85;
-        for (float row = 0; row < 3; row++) // Columns
+        for (float column = 0; column < 3; column++) // Columns
         {
             level++;
-            DrawText(TextFormat("Level %i", level), x, y, 30, WHITE);
-            x += 180;
+            DrawText(TextFormat("Level %i", level), 85 + column * 180, 60 + row * 180, 30, WHITE);
         }
-        y += 180;
     }
 }
 
@@ -86,16 +79,13 @@ void LevelUI::DrawScores()
     std::vector<int> scores = LoadScores();
 
     int i = 0;
-    float y = 100;
+
     for (float row = 0; row < 4; row++) // Rows
     {
-        float x = 85;
-        for (float row = 0; row < 3; row++) // Columns
+        for (float column = 0; column < 3; column++) // Columns
         {
-            DrawText(TextFormat("Score:  %i", scores[i]), x, y, 22, WHITE);
-            x += 180;
+            DrawText(TextFormat("Score:  %i", scores[i]), 85 + column * 180, 100 + row * 180, 22, WHITE);
             i++;
         }
-        y += 180;
     }
 }
