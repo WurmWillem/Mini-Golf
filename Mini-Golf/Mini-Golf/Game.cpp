@@ -21,17 +21,17 @@ bool Game::RunLevel(int level)
 bool Game::Update()
 {
     // Hole
-    holes.at(0).CheckCollision(balls.at(0));
-    holes.at(0).Draw();
+    holes[0].CheckCollision(balls[0]);
+    holes[0].Draw();
     
     // Obstacles
     obstacles.Draw();
-    obstacles.CheckCollisionObstacles(balls.at(0));
+    obstacles.CheckCollisionObstacles(balls[0]);
 
     // Ball
-    balls.at(0).UpdatePosition();
-    balls.at(0).Draw();
-    return balls.at(0).IsBallInHole();
+    balls[0].UpdatePosition();
+    balls[0].Draw();
+    return balls[0].IsBallInHole();
 }
 
 void Game::LoadLevel(int level)
@@ -52,15 +52,17 @@ void Game::LoadLevel(int level)
     values.pop_back();
 
     // Load Ball + Hole
-    Ball ball(values.at(0), values.at(1), values.at(2), WHITE);
+    Ball ball(values[0], values[1], values[2], WHITE);
     balls.push_back(ball);
-    Hole hole(values.at(3), values.at(4), values.at(5));
+    Hole hole(values[3], values[4], values[5]);
     holes.push_back(hole);
+
+    strokesForPar = values[6];
 
     // Load opstacles
     for (int i = 7; i < values.size(); i += 4)
     {
-        Obstacle obstacle(values.at(i), values.at(i + 1), values.at(i + 2), values.at(i + 3));
+        Obstacle obstacle(values[i], values[i + 1], values[i + 2], values[i + 3]);
         obstacles.Add(obstacle);
     }
 }
@@ -84,17 +86,37 @@ bool Game::ShowUI()
         if (level != 0)
         {
             RunLevel(level);
-            ResetGame();
+            ResetGame(level);
         } 
         EndDrawing();
     }
     return true;
 }
 
-void Game::ResetGame()
+void Game::ResetGame(int level)
 {
+    SaveScore(level, balls[0]);
+
     balls.clear();
     holes.clear();
     scores.clear();
     obstacles.Clear();
+}
+
+void Game::SaveScore(int level, Ball& ball)
+{
+    LevelUI levelScore;
+    std::vector<float> scores = levelScore.LoadScores();
+
+    if (scores.at(level - 1) < strokesForPar / ball.strokes * 100) scores.at(level - 1) = strokesForPar / ball.strokes * 100;
+    scores.at(level - 1) = std::min(100.0f, scores.at(level - 1));
+
+    std::fstream f;
+    f.open("Scores.txt", std::ios::out | std::ios::in);
+    for (int i = 0; i < scores.size() - 1; i++)
+    {
+        f << ("%.0f", scores[i]) << "\n";
+    }
+    f << scores[scores.size() - 1];
+    f.close();
 }

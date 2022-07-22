@@ -18,6 +18,8 @@ public:
 	std::vector<int> scores;
 	Obstacles obstacles;
 
+	float strokesForPar;
+
 	bool endApplication;
 
 	bool RunLevel(int level);
@@ -28,5 +30,7 @@ public:
 
 	bool ShowUI();
 
-	void ResetGame();
+	void ResetGame(int level);
+
+	void SaveScore(int level, Ball& ball);
 };

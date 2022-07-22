@@ -40,13 +40,13 @@ int LevelUI::CheckClick()
     return 0;
 }
 
-std::vector<int> LevelUI::LoadScores()
+std::vector<float> LevelUI::LoadScores()
 {
     std::ifstream scoreFile;
     scoreFile.open("Scores.txt");
 
-    std::vector<int> scores;
-    int score;
+    std::vector<float> scores;
+    float score;
 
     // Read values from file
     while (scoreFile)
@@ -56,6 +56,8 @@ std::vector<int> LevelUI::LoadScores()
         scores.push_back(score);
     }
     scores.pop_back();
+
+    //for (float num : scores) std::cout << num << "\n";
 
     return scores;
 }
@@ -76,7 +78,7 @@ void LevelUI::DrawLevels()
 
 void LevelUI::DrawScores()
 {
-    std::vector<int> scores = LoadScores();
+    std::vector<float> scores = LoadScores();
 
     int i = 0;
 
@@ -84,7 +86,7 @@ void LevelUI::DrawScores()
     {
         for (float column = 0; column < 3; column++) // Columns
         {
-            DrawText(TextFormat("Score:  %i", scores[i]), 85 + column * 180, 100 + row * 180, 22, WHITE);
+            DrawText(TextFormat("Score:  %.0f", scores[i]), 85 + column * 180, 100 + row * 180, 22, WHITE);
             i++;
         }
     }

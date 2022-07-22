@@ -13,6 +13,8 @@ Ball::Ball(float X, float Y, float Radius, Color Color)
 	velocityOnceReleased = { 0, 0 };
 
 	inHole = false;
+
+	strokes = 0;
 }
 
 void Ball::Draw()
@@ -44,6 +46,8 @@ void Ball::GetVelocity()
 
 		if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
 		{
+			strokes++;
+		std::cout << strokes << "\n";
 			velocity = velocityOnceReleased;
 			color = WHITE;
 			selected = false;

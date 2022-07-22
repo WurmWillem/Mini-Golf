@@ -28,6 +28,8 @@ public:
 
 	bool inHole;
 
+	int strokes;
+
 private:
 
 	Color color;

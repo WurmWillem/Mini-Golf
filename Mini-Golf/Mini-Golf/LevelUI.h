@@ -17,7 +17,7 @@ public:
 
 	int CheckClick();
 
-	std::vector<int> LoadScores();
+	std::vector<float> LoadScores();
 
 	std::vector<Rectangle> levels;
 private:
